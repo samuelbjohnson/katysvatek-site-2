@@ -1,0 +1,173 @@
+@import 'colors.less';
+
+@backgroundColor: @color-primary-4;
+@headerColor: @color-primary-0;
+@accentColor: @color-primary-1;
+@textColor: @color-complement-1;
+@linkColor: @color-complement-2;
+
+body {
+	margin: 0;
+	
+	background-color: @backgroundColor;
+	color: @textColor;
+
+	font-family: Gill Sans / Gill Sans MT, sans-serif;
+}
+
+@media only screen and (min-device-width: 768px) {
+	body {
+		min-width: 768px;
+	}
+	body, div, p, span {
+		font-size: 16px;
+	}
+	
+	.all {
+		display: flex;
+		justify-content: center;
+	}
+
+	.informational-container {
+		flex: 0 0 316px;
+		border-right: 1px solid @accentColor;
+	}
+
+	.contents {
+		flex: 1 1 455px;
+		margin: 0 10px;
+	}
+}
+
+/* Mobile Devices */
+@media only screen and (max-device-width: 768px) {
+	body, div, p, span {
+		font-size: 16px;
+	}
+	
+	.all {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.informational-container {
+		flex: 0 0 92px;
+	}
+	
+	header {
+		box-shadow: 0 1px 10px @headerColor;
+	}
+	
+	.informational {
+		z-index: 100;
+		background-color: @headerColor;
+		width: 100%;
+		box-sizing: border-box;
+		
+		.title {
+			border: none;
+			position: relative;
+			margin-bottom: 10px;
+			h1.title-header {
+				margin: 3px 0;
+				font-size: 1.5em;
+			}
+			h3.title-header {
+				display: inline-block;
+				font-size: .8em;
+				padding: 5px;
+				border: none;
+				&:first-of-type {
+					padding-left: 0;
+				}
+			}
+		}
+	}
+	
+	.contact {
+		position: relative;
+		height: 1em;
+	}
+	.contact-element {
+		display: inline-block;
+		font-size: .75em;
+		position: absolute;
+		margin: 6px 0 0 0;
+	}
+	.phone {
+		left: 0;
+	}
+	.email {
+		right: 0;
+	}
+
+	.contents {
+		flex: 1 1 auto;
+	}
+	
+	.portrait {
+		float: right;
+		& > img {
+			width: 70px;
+		}
+	}
+  
+  .content {
+	  padding: 10px;
+  }
+} /* End Mobile Devices */
+
+.all {
+	position: relative;
+	max-width: 1080px;
+}
+
+.informational-container {
+	position: relative;
+}
+
+.informational {
+	position: fixed;
+	padding: 10px;
+}
+
+
+.title {
+	border-bottom: 1px solid @accentColor;
+	display: inline-block;
+
+	font-family: Gill Sans / Gill Sans MT, sans-serif;
+	
+	h1 {
+		margin: 10px 0;
+	}
+	
+	h3 {
+		display: inline-block;
+		font-size: 1.3em;
+		margin: 0;
+		padding:10px;
+		border-left: 1px solid @accentColor;
+		&:first-of-type {
+			border-left: none;
+			padding-left: 0;
+		}
+	}
+}
+
+a {
+	color: @linkColor;
+	&:visited {
+		color: @linkColor;
+	}
+}
+
+.footer {
+	margin: 0;
+	padding: 10px;
+	border-top: 1px solid @accentColor;
+	font-size: smaller;
+	p {
+		margin: 0;
+	}
+}
